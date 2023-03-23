@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dark Knight</title>
+  <style>
+    html, body {
+      height: 100%;
+      margin: 0;
+      padding: 0;
+    }
+
+    .background-image {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      background-image: url('images/BG.jpeg');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+
+    body {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: black;
+    }
+
+    .floating-image {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      transition: transform 0.35s;
+      z-index: 2;
+    }
+
+    .shadow {
+      position: relative;
+      filter: blur(4px);
+      opacity: 0.5;
+      z-index: 2;
+      mix-blend-mode: multiply;
+      
+    }
+
+
+    #image1 .shadow {
+      transform: scale(1) translateX(1%) translateX(1%);
+    }
+
+    #image2 .shadow {
+      transform: scale(1) translateX(-1%) translateX(1%);
+    }
+    #image3 {
+      z-index: 3;
+      left:60%;
+      
+    }
+
+  </style>
+</head>
+<body>
+  <div class="background-image"></div>
+
+  <div id="imageContainer">
+    <img id="image4" src="images/BG.jpg">
+    <div id="image1" class="floating-image">
+    <img class="floating-image" src="images/dk.jpg" alt="Floating Image 1" >
+    <img class="shadow" src="images/dk.jpg" alt="Shadow Image 1">
+    </div>
+
+    <div id="image2" class="floating-image">
+    <img class="floating-image" src="images/dk2.png" alt="Floating Image 2">
+    <img class="shadow" src="images/dk2.png" alt="Shadow Image 2">
+    </div>
+
+    <img id="image3" class="floating-image" src="images/Icon.png" alt="Floating Image 3">
+  </div>
+
+  <script src="index.js"></script>
+  <script src="https://img.finalfantasyxiv.com/lds/pc/global/js/eorzeadb/loader.js?v2"></script>
+</body>
+</html>
